@@ -1,0 +1,54 @@
+{
+  "recipes": [
+    {
+      "name": "Classic Pancakes",
+      "ingredients": ["flour", "eggs", "milk", "sugar", "butter"],
+      "instructions": "Mix flour, eggs, milk, and sugar. Cook on buttered griddle until golden brown."
+    },
+    {
+      "name": "Scrambled Eggs",
+      "ingredients": ["eggs", "butter", "salt"],
+      "instructions": "Beat eggs with salt. Melt butter in pan and cook eggs, stirring frequently."
+    },
+    {
+      "name": "Simple Omelette",
+      "ingredients": ["eggs", "cheese", "butter"],
+      "instructions": "Beat eggs, pour into buttered pan, add cheese, fold and serve."
+    },
+    {
+      "name": "Grilled Cheese Sandwich",
+      "ingredients": ["bread", "cheese", "butter"],
+      "instructions": "Butter bread, add cheese between slices, grill until golden on both sides."
+    },
+    {
+      "name": "Tomato Soup",
+      "ingredients": ["tomatoes", "onion", "garlic", "butter", "salt"],
+      "instructions": "Sauté onion and garlic in butter. Add tomatoes and salt. Simmer and blend."
+    },
+    {
+      "name": "Pasta with Butter",
+      "ingredients": ["pasta", "butter", "salt"],
+      "instructions": "Cook pasta in salted water. Drain and toss with butter."
+    },
+    {
+      "name": "Cheese Toast",
+      "ingredients": ["bread", "cheese"],
+      "instructions": "Top bread with cheese and toast until cheese melts."
+    },
+    {
+      "name": "Fried Rice",
+      "ingredients": ["rice", "eggs", "soy sauce", "vegetables"],
+      "instructions": "Fry rice with beaten eggs, add vegetables and soy sauce. Mix well."
+    },
+    {
+      "name": "Basic Smoothie",
+      "ingredients": ["banana", "milk", "honey"],
+      "instructions": "Blend banana, milk, and honey until smooth."
+    },
+    {
+      "name": "Caprese Salad",
+      "ingredients": ["tomatoes", "cheese", "basil", "olive oil"],
+      "instructions": "Slice tomatoes and cheese. Layer with basil and drizzle with olive oil."
+    }
+  ]
+}
