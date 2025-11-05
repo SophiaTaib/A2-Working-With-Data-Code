@@ -4,19 +4,30 @@ A small Python script that helps you find recipes based on the ingredients you h
 
 ---
 
-## What It Does
+## Overview
 
-You type in your ingredients, and it checks a list of recipes to see which ones you can make. It then shows the matching recipes and how to make them.
+Recipe Matcher is a Python-based tool that demonstrates code literacy through data handling, logic, and user interaction. 
+It reads a list of recipes from a JSON file and checks which ones you can make with your available ingredients. 
 
 ---
 
-## What You Need
+## What It Does
+
+1. You type in your available ingredients (comma-seperated).
+2. The program compares your list against all recipes in recipes.json.
+3. It prints any recipes that can be made using only those ingredients - including their names and instructions.
+
+This demonstrates how structured data (JSON), conditional logic, and string operations can combine to create a functional code prototype. 
+
+---
+
+## Requirements
 
 - Python 3.7 or higher
-- macOS (tested on macOS)
-- No extra installs — it only uses the standard Python library
+- Tested on macOS (works cross-platform)
+- No external libraries - uses only Python's standard library. 
 
-To check your Python version:
+Check your Python version:
 
 ```bash
 python3 --version
@@ -26,15 +37,15 @@ You should see something like `Python 3.9.x`.
 
 ---
 
-## Setup
+## Setup and Running the Program
 
-1. Download these two files:
+1. Download the following two files:
    - `recipe_matcher.py`
    - `recipes.json`
+  
+2. Put both files in the same folder.
 
-2. Put them in the same folder.
-
-3. Open Terminal and go to that folder:
+3. Open Teriminal and navigate to that folder:
 
 ```bash
 cd /path/to/recipe-matcher
@@ -46,76 +57,54 @@ cd /path/to/recipe-matcher
 python3 recipe_matcher.py
 ```
 
-(If `python3` doesn't work, try `python`.)
+(If `python3` doesn't work, try `python` instead)
 
 ---
 
-## How to Use
+## How It Works (Code Overview)
 
-1. Run the script
-2. When asked, type in the ingredients you have (separated by commas)
-3. The program will show recipes that match what you've got
+1. load_recipes() - Opens and reads recipes.json.
+2. normalize_ingredient() - Cleans ingredient names for comparison.
+3. can_make_recipe() - Checks if all required ingredients exist in your list.
+4. find_matching_recipes() - Loops through all recipes and collects matches.
+5. display_recipes() - Neatly prints the results in the terminal.
 
-### Example
+The process connects directly to Python's fundamental data types (list, dict, set) and shows how conditional logic and iteration can be combined to produce meaningful output. 
 
-```
-🍳 Welcome to Recipe Matcher! 🍳
-------------------------------------------------------------
-Enter your ingredients (separated by commas):
-> eggs, butter, cheese
+### Example Outputs
 
-✅ Found 1 recipe you can make:
+Example 1: Single Match
 
-1. Simple Omelette
-   Ingredients: eggs, cheese, butter
-   Instructions: Beat eggs, pour into buttered pan, add cheese, fold and serve.
-```
+Input - 
+eggs, butter, cheese
 
----
+Output - 
+1 recipe found: Simple Omelette
+Ingredients: eggs, cheese, butter
+Instructions: Beat eggs, pour into buttered pan, add cheese, fold and serve. 
 
-## Try These
+Example 2: Multiple Matches
 
-**Example 1:**
-
-Input:
-```
-eggs, butter, salt
-```
-
-Output:
-```
-Scrambled Eggs
-```
-
-**Example 2:**
-
-Input:
-```
+Input - 
 bread, cheese, butter
-```
+
+Output - 
+2 recipes found:
+1. Grilled Cheese Sandwich
+2. Cheese Toast
+
+Example 3: No Matches
+
+Input - 
+banana, kale
 
 Output:
-```
-Grilled Cheese Sandwich, Cheese Toast
-```
-
-**Example 3:**
-
-Input:
-```
-flour, eggs, milk, sugar, butter
-```
-
-Output:
-```
-Classic Pancakes
-```
-
----
+No recipes found with your ingredients.
+Try adding more ingredients!
 
 ## Adding Your Own Recipes
 
-You can edit `recipes.json` to add more recipes. It should look like this:
+You can edit or expand `recipes.json` to add more recipes. It should look like this:
 
 ```json
 {
@@ -132,17 +121,28 @@ You can edit `recipes.json` to add more recipes. It should look like this:
 **Tips:**
 
 - Ingredient names are not case-sensitive ("Eggs" = "eggs")
-- It only shows recipes where you have all the ingredients
-- Keep ingredient names simple and consistent
+- Only recipes with all ingredients available will display
+- Keep ingredient names short and consistent
 
 ---
 
 ## Troubleshooting
 
-- **"recipes.json not found"** → Make sure it's in the same folder as the script
-- **"python3 not found"** → Try running with `python` instead
-- **"not valid JSON"** → There's probably a missing comma or quote in your `recipes.json`
-- **No recipes found** → Check spelling and make sure all ingredients match
+Issue: recipes.json not found
+Cause: File missing or not in the same folder
+Solution: Move recipes.json to same directory as the script
+
+Issue: python3 not found
+Cause: Windows systems use python
+Solution: Try python recipe_matcher.py
+
+Issue: not valid JSON
+Cause: Missing commas or quotes
+Solution: Validate JSON online or re-check syntax
+
+Issue: No recipes found
+Cause: Ingredients don't fully match
+Solution: Try adding more or correcting spelling
 
 ---
 
@@ -150,7 +150,22 @@ You can edit `recipes.json` to add more recipes. It should look like this:
 
 ```
 recipe-matcher/
-├── recipe_matcher.py
-├── recipes.json
-└── README.md
+├── recipe_matcher.py      # main script
+├── recipes.json           # data file
+├── README.md              # this document
+└── img/
+   ├── flowchart           # process diagram
+   ├── screenshot   
+   ├──
+   ├──
+
 ```
+
+---
+
+## Future Improvements
+
+Add fuzzy matching (e.g., "tomato" = "tomatoes")
+Handle ingredient synonyms (e.g., "courgette" = "zucchini")
+Rank recipes by ingredient overlap (partial matches)
+Build a user interface or web version for accessibility
