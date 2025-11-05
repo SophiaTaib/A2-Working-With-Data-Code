@@ -153,11 +153,14 @@ recipe-matcher/
 ├── recipe_matcher.py      # main script
 ├── recipes.json           # data file
 ├── README.md              # this document
+├── flowchart              # process diagram
 └── img/
-   ├── flowchart           # process diagram
-   ├── screenshot   
-   ├──
-   ├──
+   ├── Error     
+   ├── Extra Ingredient
+   ├── Formatting Change
+   ├── Multiple Matches     
+   ├── No Recipe Found              
+   └── Single Match
 
 ```
 
